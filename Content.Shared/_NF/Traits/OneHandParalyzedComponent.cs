@@ -7,9 +7,9 @@ namespace Content.Shared._NF.Traits;
 /// Removes the use of a hand from the player.
 /// Used for Unilateral Transradial Paralysis trait.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(OneHandParalyzedSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(OneHandParalyzedSystem))]
 public sealed partial class OneHandParalyzedComponent : Component
 {
-    [DataField]
-    public string ParalyzedHand = "";
+    [DataField, AutoNetworkedField]
+    public string? ParalyzedHand;
 }
